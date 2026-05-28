@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitConnect PT - Gestão Premium para Personal Trainers</title>
+    
+    <!-- Google Fonts: Space Grotesk para Títulos & Inter para a UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS v4 via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- AlpineJS para as FAQs (Accordion) -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+      .font-display { font-family: 'Space Grotesk', sans-serif; }
+      .bg-zinc-950 { background-color: #09090b; }
+      .border-zinc-850 { border-color: #202024; }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-4px); }
+      }
+      .animate-float { animation: float 3s ease-in-out infinite; }
+    </style>
+  </head>
+  <body class="bg-zinc-950 text-zinc-100 font-sans antialiased selection:bg-emerald-400 selection:text-zinc-950">
+
+    <!-- 1. HEADER & HERO SECTION -->
+    <header class="relative overflow-hidden pt-16 pb-12 sm:pt-24">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+        
+        <!-- Logótipo -->
+        <div class="flex items-center justify-center gap-2 mb-8 animate-float">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-500 flex items-center justify-center text-zinc-950 shadow-lg shadow-emerald-400/20">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M20.57 14.86L22 13.43c.78-.78.78-2.05 0-2.83l-1.43-1.43a2 2 0 0 0-2.83 0l-1.43 1.43-5.28-5.28 1.43-1.43c.78-.78.78-2.05 0-2.83L11 .14a2 2 0 0 0-2.83 0L6.71 1.57l-1 1-1 1a2 2 0 0 0 0 2.83l1.43 1.43-5.28 5.28-1.43-1.43a2 2 0 0 0-2.83 0L.14 13c-.78.78-.78 2.05 0 2.83l1.43 1.43c.78.78 2.05.78 2.83 0l1.43-1.43 5.28 5.28-1.43 1.43a2 2 0 0 0 0 2.83l1.43 1.43a2 2 0 0 0 2.83 0l2.43-2.43.02-.02c.03.03.62.62.65.65.78.78 2.05.78 2.83 0l1.43-1.43c.78-.78.78-2.05 0-2.83l-1.43-1.43 5.28-5.28 1.43 1.43a2 2 0 0 0 2.83 0z"/>
+            </svg>
+          </div>
+          <span class="text-2xl font-display font-extrabold tracking-tight text-white">
+            FITCONNECT <span class="text-emerald-400">PT</span>
+          </span>
+        </div>
+
+        <!-- Super-Headline -->
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-[10px] sm:text-xs font-extrabold tracking-widest text-emerald-400 font-mono uppercase mb-6">
+          <span>⚡ EXCLUSIVO PARA PERSONAL TRAINERS EM PORTUGAL</span>
+        </div>
+
+        <!-- Headline Principal -->
+        <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-white leading-tight max-w-4xl mx-auto">
+          Cansado de andar atrás dos alunos para cobrarem as mensalidades ou de perderes horas em folhas de Excel?
+        </h1>
+
+        <p class="mt-6 text-zinc-400 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+          Gere os teus atletas, constrói planos de treino profissionais em segundos e envia lembretes de pagamento com dados MB Way direto para o WhatsApp deles. Tudo num único ecrã, feito para o teu telemóvel.
+        </p>
+
+        <!-- CTA Principal -->
+        <div class="mt-10 space-y-4">
+          <a
+            href="https://pay.hotmart.com/G106028147M"
+            target="_blank"
+            referrerpolicy="no-referrer"
+            class="inline-flex items-center justify-center gap-3 w-full sm:w-auto px-8 py-5 text-base font-extrabold font-mono rounded-2xl bg-emerald-400 text-zinc-950 hover:bg-emerald-300 transform active:scale-95 transition-all shadow-2xl shadow-emerald-400/25"
+          >
+            <span>QUERO ACESSO VITALÍCIO POR APENAS 19,90€</span>
+          </a>
+          <p class="text-xs text-zinc-500 font-medium">
+            ⚡ Preço Final com IVA Incluído. Pagamento Seguro via MB Way & Multibanco (Hotmart). Sem Mensalidades.
+          </p>
+        </div>
+
+        <!-- PROVA VISUAL 1 -->
+        <div class="mt-16 relative mx-auto max-w-4xl rounded-2xl border border-zinc-800 bg-zinc-900/30 p-2 shadow-2xl">
+          <img src="fitconnect pt.JPG" alt="Painel de Faturação FitConnect PT" class="rounded-xl w-full h-auto object-cover opacity-90 hover:opacity-100 transition duration-300">
+        </div>
+
+      </div>
+    </header>
+
+    <!-- 2. A AGONIA (A DOR DO PT) -->
+    <section class="border-t border-zinc-900 py-20 bg-zinc-950">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center space-y-3 mb-16">
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-zinc-100">
+            O teu foco devia ser o treino... não a burocracia.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          <!-- Card 1 -->
+          <div class="bg-zinc-900/50 border border-zinc-900 rounded-2xl p-6 space-y-4">
+            <div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono font-bold">01</div>
+            <h3 class="font-display font-bold text-lg text-white">"O Barrete das Mensalidades"</h3>
+            <p class="text-zinc-400 text-sm">Alunos que treinam e esquecem-se de pagar. O constrangimento de ter de andar a cobrar todas as semanas desaparece com os nossos alertas rápidos.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-zinc-900/50 border border-zinc-900 rounded-2xl p-6 space-y-4">
+            <div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono font-bold">02</div>
+            <h3 class="font-display font-bold text-lg text-white">O Caos do Excel</h3>
+            <p class="text-zinc-400 text-sm">Planos perdidos no WhatsApp, PDFs feios ou folhas rasgadas no chão do ginásio. É hora de elevar o nível profissional do teu negócio.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-zinc-900/50 border border-zinc-900 rounded-2xl p-6 space-y-4">
+            <div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center font-mono font-bold">03</div>
+            <h3 class="font-display font-bold text-lg text-white">Tempo de Família Perdido</h3>
+            <p class="text-zinc-400 text-sm">Chegar a casa exausto à noite e ainda ter de ir para o computador portátil montar rotinas de exercícios para o dia seguinte. Faz tudo no telemóvel entre treinos.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. A SOLUÇÃO C/ PROVAS VISUAIS -->
+    <section class="border-t border-zinc-900 py-20 bg-zinc-900/20 space-y-24">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center space-y-3 mb-16">
+          <h2 class="font-display font-extrabold text-2xl sm:text-4xl text-zinc-100">
+            Por dentro da ferramenta que vai organizar o teu chão de ginásio
+          </h2>
+        </div>
+
+        <!-- Bloco de Funcionalidade 1 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-5 space-y-4">
+            <div class="text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">● GESTÃO DE ATLETAS</div>
+            <h3 class="font-display font-bold text-2xl text-white">Fichas Técnicas e Controlo de Estado</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Sabe exatamente o objetivo de cada aluno (*Hipertrofia, Emagrecimento, Reabilitação*) e quem está com a mensalidade em dia ou em **ATRASO**. Tudo centralizado de forma ultra-visual.
+            </p>
+          </div>
+          <div class="lg:col-span-7 rounded-xl border border-zinc-850 p-1.5 bg-zinc-900/50 shadow-xl">
+            <img src="fitconnect pt 2.JPG" alt="Gestão de Alunos Ativos" class="rounded-lg w-full h-auto">
+          </div>
+        </div>
+
+        <!-- Bloco de Funcionalidade 2 -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center pt-12">
+          <div class="lg:col-span-5 lg:order-2 space-y-4">
+            <div class="text-emerald-400 font-mono text-xs font-bold uppercase tracking-wider">● PRESCRIÇÃO INTELIGENTE</div>
+            <h3 class="font-display font-bold text-2xl text-white">Construtor de Exercícios e Rotinas Rápidas</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Seleciona o aluno, escolhe a estrutura (Treino A, B, C) e adiciona exercícios com séries e repetições num piscar de olhos. Usa atalhos rápidos e gera folhas limpas prontas para PDF ou impressão.
+            </p>
+          </div>
+          <div class="lg:col-span-7 lg:order-1 rounded-xl border border-zinc-850 p-1.5 bg-zinc-900/50 shadow-xl">
+            <img src="fitconnect pt 3.JPG" alt="Construtor de Exercícios" class="rounded-lg w-full h-auto">
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. OFERTA MATADORA & ANCORAGEM DE PREÇO -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="bg-zinc-900 border-2 border-emerald-500/20 rounded-3xl p-8 sm:p-12 text-center md:text-left shadow-2xl">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-7 space-y-4">
+            <div class="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-400 rounded-lg text-xs font-mono font-bold uppercase tracking-wider">
+              OFERTA EXCLUSIVA DE LANÇAMENTO
+            </div>
+            <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white">Acesso Vitalício Para Sempre</h3>
+            <p class="text-zinc-400 text-sm leading-relaxed">
+              Uma subscrição de um software básico de fitness custa-te mais de 30€ por mês. Com o FitConnect PT pagas **uma única vez** e garantes uma ferramenta para toda a tua carreira profissional.
+            </p>
+          </div>
+
+          <div class="md:col-span-5 bg-zinc-950 p-6 rounded-2xl border border-zinc-850 text-center space-y-4">
+            <div class="space-y-1">
+              <span class="text-xs text-zinc-500 line-through">Preço Padrão: 99,00€</span>
+              <div class="text-4xl font-display font-extrabold text-emerald-400 font-mono">19,90€</div>
+              <span class="text-[10px] text-zinc-400 font-mono block font-bold uppercase tracking-widest">PAGAMENTO ÚNICO • IVA INCLUÍDO</span>
+            </div>
+
+            <a
+              href="https://pay.hotmart.com/G106028147M"
+              target="_blank"
+              referrerpolicy="no-referrer"
+              class="w-full inline-flex items-center justify-center py-3 px-4 text-xs font-bold font-mono rounded-xl bg-emerald-400 text-zinc-950 hover:bg-emerald-300 transition-all transform hover:scale-[1.02]"
+            >
+              <span>QUERO GARANTIR ESTE PREÇO</span>
+            </a>
+            <p class="text-[9px] text-zinc-500">Garantia incondicional de 7 dias assegurada pela Hotmart.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. PERGUNTAS FREQUENTES (FAQ) -->
+    <section class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-zinc-900" x-data="{ active: null }">
+      <div class="text-center space-y-2 mb-12">
+        <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-zinc-100">Perguntas Frequentes</h2>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="bg-zinc-900/40 border border-zinc-900 rounded-2xl overflow-hidden">
+          <button @click="active = active === 1 ? null : 1" class="w-full flex items-center justify-between p-5 text-left font-display font-bold text-zinc-200 hover:text-white">
+            <span>Tenho de pagar todos os meses?</span>
+            <svg class="w-4 h-4 text-zinc-500 transition-transform" :class="active === 1 ? 'rotate-180 text-emerald-400' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div x-show="active === 1" x-collapse class="p-5 pt-0 border-t border-zinc-950 text-sm text-zinc-400 leading-relaxed" style="display: none;">
+            Não. O FitConnect PT está em fase de lançamento. Quem comprar hoje garante acesso vitalício com um único pagamento de 19,90€, sem quaisquer mensalidades ou taxas ocultas.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-zinc-900/40 border border-zinc-900 rounded-2xl overflow-hidden">
+          <button @click="active = active === 2 ? null : 2" class="w-full flex items-center justify-between p-5 text-left font-display font-bold text-zinc-200 hover:text-white">
+            <span>Como recebo o acesso?</span>
+            <svg class="w-4 h-4 text-zinc-500 transition-transform" :class="active === 2 ? 'rotate-180 text-emerald-400' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div x-show="active === 2" x-collapse class="p-5 pt-0 border-t border-zinc-950 text-sm text-zinc-400 leading-relaxed" style="display: none;">
+            O processamento é feito de forma 100% segura pela Hotmart. Assim que o pagamento via MB Way, Multibanco ou Cartão for confirmado, recebes o link exclusivo de acesso diretamente no teu e-mail.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-zinc-900/40 border border-zinc-900 rounded-2xl overflow-hidden">
+          <button @click="active = active === 3 ? null : 3" class="w-full flex items-center justify-between p-5 text-left font-display font-bold text-zinc-200 hover:text-white">
+            <span>Os meus dados ficam seguros?</span>
+            <svg class="w-4 h-4 text-zinc-500 transition-transform" :class="active === 3 ? 'rotate-180 text-emerald-400' : ''" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg>
+          </button>
+          <div x-show="active === 3" x-collapse class="p-5 pt-0 border-t border-zinc-950 text-sm text-zinc-400 leading-relaxed" style="display: none;">
+            Sim. A aplicação usa tecnologia de armazenamento local seguro diretamente no teu dispositivo, garantindo privacidade total sobre os teus dados e os dos teus alunos.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-950 border-t border-zinc-900 py-12 text-center text-xs text-zinc-500 space-y-2">
+      <p class="font-sans font-medium text-zinc-400 text-sm">FitConnect PT 🇵🇹</p>
+      <p class="max-w-xl mx-auto text-[10px] text-zinc-600 leading-relaxed font-mono px-4">
+        Este software é processado e vendido integralmente de forma garantida pela Hotmart. A marca MB Way é propriedade da SIBS e é utilizada nesta simulação para demonstrar as integrações manuais de lembrete por WhatsApp.
+      </p>
+      <p class="text-[10px] text-zinc-700 font-mono">
+        FitConnect PT © 2026 — Todos os direitos reservados.
+      </p>
+    </footer>
+
+  </body>
+</html>
